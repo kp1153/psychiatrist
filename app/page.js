@@ -1,3 +1,4 @@
+import Depression from "@/components/HeroSection";
 import Depression from "@/components/Depression";
 import Anxiety from "@/components/Anxiety";
 import BipolarDisorder from "@/components/BipolarDisorder";
@@ -13,6 +14,7 @@ import PTSD from "@/components/PTSD";
 export default function Home() {
   return (
     <main>
+      <HeroSection />
       <Depression />
       <Anxiety />
       <BipolarDisorder />
