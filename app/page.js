@@ -1,4 +1,4 @@
-import Depression from "@/components/HeroSection";
+import HeroSection from "@/components/HeroSection";
 import Depression from "@/components/Depression";
 import Anxiety from "@/components/Anxiety";
 import BipolarDisorder from "@/components/BipolarDisorder";
