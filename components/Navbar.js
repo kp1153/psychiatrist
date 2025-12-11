@@ -9,20 +9,26 @@ const Navbar = () => {
 
   const navItems = [
     { name: "होम", href: "/" },
-    { name: "हमारी एप्रोच", href: "/approach" },
+    { name: "कैसे करते हैं इलाज", href: "/approach" },
     { name: "टिप्स", href: "/tips" },
     { name: "मरीजों की जबानी", href: "/marij-ki-jabani" },
+    { name: "ऑनलाइन परामर्श", href: "/online-consultation" },
+    { name: "भुगतान करें", href: "/payment" },
   ];
 
   return (
-    <nav className="bg-[#006680] py-3 shadow-md">
+    <nav className="bg-[#006680] py-4 shadow-md">
       <div className="container mx-auto px-4">
         {/* DESKTOP */}
         <div className="hidden md:block text-center">
           {/* क्लीनिक का नाम */}
-          <h1 className="text-3xl font-bold text-white mb-4">
-            नवचेतना न्यूरो-साइकियाट्री सेंटर
-          </h1>
+          <h1 className="text-4xl font-bold text-white mb-1">नवचेतना</h1>
+          <p className="text-lg text-yellow-200 mb-1">
+            न्यूरो-साइकियाट्री सेंटर
+          </p>
+          <p className="text-sm text-white/90 mb-4 italic">
+            वाराणसी और आसपास के जिलों के मानसिक रोगियों के लिए अपनत्व से भरा नाम
+          </p>
 
           {/* Navigation Links */}
           <div className="flex justify-center items-center space-x-6">
@@ -43,8 +49,9 @@ const Navbar = () => {
           <div className="flex justify-between items-center">
             {/* क्लीनिक का नाम (Mobile) */}
             <Link href="/" className="flex flex-col">
-              <span className="text-xl font-bold text-white">
-                नवचेतना न्यूरो-साइकियाट्री सेंटर
+              <span className="text-2xl font-bold text-white">नवचेतना</span>
+              <span className="text-xs text-yellow-200">
+                न्यूरो-साइकियाट्री सेंटर
               </span>
             </Link>
 
