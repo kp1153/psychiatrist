@@ -13,55 +13,49 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// **--- SEO अनुकूलित metadata ---**
 export const metadata = {
-  title: "डॉ. अखिलेश पाण्डेय | नवचेतना न्यूरो-साइकियाट्री सेंटर, वाराणसी",
+  title: "डॉ. आर.के. कुशवाहा | न्यूरो-साइकियाट्रिस्ट, लखनऊ",
   description:
-    "डॉ. अखिलेश पाण्डेय (MBBS, MD BHU) - वाराणसी के अनुभवी मानसिक रोग विशेषज्ञ। Depression, Anxiety, Bipolar Disorder, Schizophrenia, OCD, ADHD, PTSD का विशेषज्ञ इलाज। नवचेतना न्यूरो-साइकियाट्री सेंटर, बी-29 भुवननगर, अर्दली बाजार, वाराणसी। फोन: 9450016305",
+    "डॉ. आर.के. कुशवाहा - लखनऊ के अनुभवी मानसिक रोग विशेषज्ञ। Depression, Anxiety, Bipolar Disorder, Schizophrenia, OCD, ADHD, PTSD, Stress, Insomnia का विशेषज्ञ इलाज। मानसिक स्वास्थ्य परामर्श और उपचार। फोन: 8789482183",
 
   keywords: [
-    "Dr Akhilesh Pandey Varanasi",
-    "Psychiatrist Varanasi",
-    "Neuro Psychiatrist Varanasi",
-    "Mental Health Doctor Varanasi",
-    "Depression Treatment Varanasi",
-    "Anxiety Treatment Varanasi",
-    "Best Psychiatrist in Varanasi",
-    "NAVCHETNA Centre Varanasi",
-    "BHU Psychiatrist",
-    "मानसिक रोग विशेषज्ञ वाराणसी",
-    "डॉ अखिलेश पाण्डेय",
-    "नवचेतना साइकियाट्री सेंटर",
-    "मनोचिकित्सक वाराणसी",
-    "डिप्रेशन का इलाज वाराणसी",
-    "मानसिक रोग का इलाज",
+    "Dr RK Kushwaha Lucknow",
+    "Psychiatrist Lucknow",
+    "Neuro Psychiatrist Lucknow",
+    "Mental Health Doctor Lucknow",
+    "Depression Treatment Lucknow",
+    "Anxiety Treatment Lucknow",
+    "Best Psychiatrist in Lucknow",
+    "Bipolar Disorder Treatment Lucknow",
+    "Schizophrenia Treatment Lucknow",
+    "OCD Treatment Lucknow",
+    "ADHD Treatment Lucknow",
+    "PTSD Treatment Lucknow",
+    "Stress Management Lucknow",
+    "Insomnia Treatment Lucknow",
+    "मानसिक रोग विशेषज्ञ लखनऊ",
+    "डॉ आरके कुशवाहा लखनऊ",
+    "मनोचिकित्सक लखनऊ",
+    "डिप्रेशन का इलाज लखनऊ",
+    "मानसिक रोग का इलाज लखनऊ",
+    "साइकियाट्रिस्ट लखनऊ",
+    "मानसिक स्वास्थ्य परामर्श",
   ],
 
-  authors: [{ name: "Dr. Akhilesh Pandey" }],
+  authors: [{ name: "Dr. R.K. Kushwaha" }],
 
   openGraph: {
-    title: "डॉ. अखिलेश पाण्डेय | नवचेतना न्यूरो-साइकियाट्री सेंटर",
+    title: "डॉ. आर.के. कुशवाहा | न्यूरो-साइकियाट्रिस्ट, लखनऊ",
     description:
-      "वाराणसी में मानसिक और न्यूरोलॉजिकल विकारों का विशेषज्ञ उपचार। BHU से MD, 15+ वर्षों का अनुभव।",
-    url: "https://navchetana-psychiatry.vercel.app",
-    siteName: "नवचेतना न्यूरो-साइकियाट्री सेंटर",
+      "लखनऊ में मानसिक और न्यूरोलॉजिकल विकारों का विशेषज्ञ उपचार। Depression, Anxiety, OCD, ADHD का इलाज।",
     locale: "hi_IN",
     type: "website",
-    images: [
-      {
-        url: "/psychiatrist.jpeg",
-        width: 1200,
-        height: 630,
-        alt: "डॉ. अखिलेश पाण्डेय - मानसिक रोग विशेषज्ञ",
-      },
-    ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "डॉ. अखिलेश पाण्डेय | नवचेतना सेंटर, वाराणसी",
-    description: "वाराणसी में मानसिक स्वास्थ्य का विशेषज्ञ उपचार",
-    images: ["/psychiatrist.jpeg"],
+    title: "डॉ. आर.के. कुशवाहा | मानसिक रोग विशेषज्ञ, लखनऊ",
+    description: "लखनऊ में मानसिक स्वास्थ्य का विशेषज्ञ उपचार",
   },
 
   robots: {
@@ -76,14 +70,6 @@ export const metadata = {
     },
   },
 
-  verification: {
-    google: "your-google-verification-code", // Google Search Console से मिलेगा
-  },
-
-  alternates: {
-    canonical: "https://navchetana-psychiatry.vercel.app",
-  },
-
   category: "Healthcare",
 };
 
@@ -91,58 +77,23 @@ export default function RootLayout({ children }) {
   return (
     <html lang="hi">
       <head>
-        {/* Structured Data - Doctor Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Physician",
-              name: "Dr. Akhilesh Pandey",
+              name: "Dr. R.K. Kushwaha",
               description:
                 "Neuro-Psychiatrist specializing in mental health disorders",
-              image:
-                "https://navchetana-psychiatry.vercel.app/psychiatrist.jpeg",
-              telephone: "+91-9450016305",
+              telephone: "+91-8789482183",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "B-29, Bhuvannagar, Orderly Bazaar",
-                addressLocality: "Varanasi",
+                addressLocality: "Lucknow",
                 addressRegion: "Uttar Pradesh",
-                postalCode: "221002",
                 addressCountry: "IN",
               },
               medicalSpecialty: "Psychiatry",
-              alumniOf: {
-                "@type": "EducationalOrganization",
-                name: "Banaras Hindu University",
-              },
-            }),
-          }}
-        />
-
-        {/* Structured Data - Medical Clinic Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "MedicalClinic",
-              name: "NAVCHETNA Neuro-Psychiatry Centre",
-              image:
-                "https://navchetana-psychiatry.vercel.app/psychiatrist.jpeg",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "B-29, Bhuvannagar, Orderly Bazaar",
-                addressLocality: "Varanasi",
-                addressRegion: "Uttar Pradesh",
-                postalCode: "221002",
-                addressCountry: "IN",
-              },
-              telephone: "+91-9450016305",
-              openingHours: "Mo-Sa 09:00-20:00",
-              priceRange: "₹₹",
-              medicalSpecialty: ["Psychiatry", "Neurology"],
             }),
           }}
         />
