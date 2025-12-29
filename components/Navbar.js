@@ -22,13 +22,11 @@ const Navbar = () => {
         {/* DESKTOP */}
         <div className="hidden md:block text-center">
           {/* क्लीनिक का नाम */}
-          <h1 className="text-4xl font-bold text-white mb-1">नवचेतना</h1>
+          <h1 className="text-4xl font-bold text-white mb-1">साइकियाट्रिस्ट</h1>
           <p className="text-lg text-yellow-200 mb-1">
-            न्यूरो-साइकियाट्री सेंटर
+            डॉ. आर.के. कुशवाहा
           </p>
-          <p className="text-sm text-white/90 mb-4 italic">
-            वाराणसी और आसपास के जिलों के मानसिक रोगियों के लिए अपनत्व से भरा नाम
-          </p>
+        
 
           {/* Navigation Links */}
           <div className="flex justify-center items-center space-x-6">
