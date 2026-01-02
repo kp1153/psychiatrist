@@ -25,8 +25,7 @@ const Navbar = () => {
           <h1 className="text-4xl font-bold text-white mb-1">साइकियाट्रिस्ट</h1>
           <p className="text-lg text-yellow-200 mb-1">
             डॉ. आर.के. कुशवाहा
-          </p>
-        
+          </p>       
 
           {/* Navigation Links */}
           <div className="flex justify-center items-center space-x-6">
