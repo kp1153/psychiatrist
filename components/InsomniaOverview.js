@@ -1,9 +1,10 @@
+"use client";
 import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Badge } from '@/components/ui/badge';
 import { Moon, Sun, Pill, Leaf, Brain, Heart, AlertCircle, Clock, Activity, Stethoscope } from 'lucide-react';
 
 export default function InsomniaOverview() {
@@ -147,7 +148,7 @@ export default function InsomniaOverview() {
                   <div className="space-y-4">
                     <div>
                       <Badge className="mb-2 bg-amber-500">Acute/Transient</Badge>
-                      <p className="text-sm text-gray-600">कुछ दिनों से कुछ सप्ताह तक (< 3 महीने)</p>
+                      <p className="text-sm text-gray-600">कुछ दिनों से कुछ सप्ताह तक (&lt; 3 महीने)</p>
                     </div>
                     <div>
                       <Badge className="mb-2 bg-orange-500">Chronic/Persistent</Badge>

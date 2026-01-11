@@ -10,12 +10,11 @@ export default function ADHD() {
             ⚡ ADHD (Attention Deficit Hyperactivity Disorder)
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            ADHD में ध्यान केंद्रित करने में कठिनाई, अतिसक्रियता और आवेगपूर्ण
-            व्यवहार होता है। यह मुख्यतः बच्चों में देखा जाता है।
+            ADHD एक मानसिक स्वास्थ्य स्थिति है जो ध्यान, व्यवहार और मूड को प्रभावित करती है। यह बच्चों और वयस्कों दोनों में हो सकती है। सही उपचार से पूर्ण और उत्पादक जीवन संभव है।
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-600">
             <h3 className="text-2xl font-bold text-green-700 mb-4 flex items-center">
               <span className="mr-2">🔍</span> मुख्य लक्षण
@@ -43,15 +42,53 @@ export default function ADHD() {
               </li>
               <li className="flex items-start">
                 <span className="text-green-600 mr-2 font-bold">•</span>
-                <span>एक जगह बैठने में परेशानी</span>
+                <span>याददाश्त और एकाग्रता में कमी</span>
               </li>
               <li className="flex items-start">
                 <span className="text-green-600 mr-2 font-bold">•</span>
-                <span>बातों को बीच में काटना</span>
+                <span>नींद और भूख में बदलाव</span>
               </li>
               <li className="flex items-start">
                 <span className="text-green-600 mr-2 font-bold">•</span>
-                <span>पढ़ाई और स्कूल में समस्याएं</span>
+                <span>स्कूल या काम में प्रदर्शन में कमी</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-600">
+            <h3 className="text-2xl font-bold text-blue-700 mb-4 flex items-center">
+              <span className="mr-2">🧬</span> मुख्य कारण
+            </h3>
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-start">
+                <span className="text-blue-600 mr-2 font-bold">•</span>
+                <span>
+                  <strong>आनुवंशिक</strong> - परिवार में मानसिक स्वास्थ्य समस्याएं
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-600 mr-2 font-bold">•</span>
+                <span>
+                  <strong>बचपन के अनुभव</strong> - तनाव, उपेक्षा या दुर्व्यवहार
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-600 mr-2 font-bold">•</span>
+                <span>
+                  <strong>सामाजिक कारक</strong> - अलगाव या रिश्ते की समस्याएं
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-600 mr-2 font-bold">•</span>
+                <span>
+                  <strong>तनाव</strong> - निरंतर दबाव और चिंता
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-600 mr-2 font-bold">•</span>
+                <span>
+                  <strong>शारीरिक स्वास्थ्य</strong> - अन्य बीमारियों का प्रभाव
+                </span>
               </li>
             </ul>
           </div>
@@ -64,19 +101,19 @@ export default function ADHD() {
               <li className="flex items-start">
                 <span className="text-pink-600 mr-2 font-bold">✓</span>
                 <span>
-                  <strong>व्यवहार थेरेपी</strong> - बच्चों के लिए विशेष
+                  <strong>CBT थेरेपी</strong> - संज्ञानात्मक व्यवहार थेरेपी
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="text-pink-600 mr-2 font-bold">✓</span>
                 <span>
-                  <strong>दवा प्रबंधन</strong> - ध्यान बढ़ाने वाली दवाएं
+                  <strong>दवा प्रबंधन</strong> - एंटीडिप्रेसेंट और फोकस दवाएं
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="text-pink-600 mr-2 font-bold">✓</span>
                 <span>
-                  <strong>ब्रेन फीडबैक थेरेपी</strong> - फोकस सुधार
+                  <strong>माइंडफुलनेस थेरेपी</strong> - ध्यान और योग
                 </span>
               </li>
               <li className="flex items-start">
@@ -88,22 +125,64 @@ export default function ADHD() {
               <li className="flex items-start">
                 <span className="text-pink-600 mr-2 font-bold">✓</span>
                 <span>
-                  <strong>पेरेंट ट्रेनिंग</strong> - माता-पिता को गाइड
+                  <strong>जीवनशैली सुधार</strong> - व्यायाम, पोषण, नींद
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="text-pink-600 mr-2 font-bold">✓</span>
                 <span>
-                  <strong>स्कूल सहयोग</strong> - शिक्षकों के साथ समन्वय
+                  <strong>पारिवारिक सहायता</strong> - परिवार और स्कूल समन्वय
                 </span>
               </li>
             </ul>
+          </div>
+        </div>
 
-            <div className="mt-6 p-4 bg-pink-50 rounded-lg border border-pink-200">
-              <p className="text-sm text-gray-700">
-                <strong className="text-pink-700">नोट:</strong> सही उपचार से
-                ADHD वाले बच्चे सामान्य जीवन जी सकते हैं और अच्छा प्रदर्शन कर
-                सकते हैं।
+        <div className="max-w-6xl mx-auto mt-8 grid md:grid-cols-2 gap-8">
+          <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl shadow-lg p-6 border-l-4 border-purple-600">
+            <h3 className="text-2xl font-bold text-purple-700 mb-4 flex items-center">
+              <span className="mr-2">🛡️</span> रोकथाम के उपाय
+            </h3>
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-start">
+                <span className="text-purple-600 mr-2 font-bold">•</span>
+                <span>स्वस्थ भोजन और नियमित व्यायाम</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-purple-600 mr-2 font-bold">•</span>
+                <span>पर्याप्त नींद और आराम का समय</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-purple-600 mr-2 font-bold">•</span>
+                <span>मजबूत पारिवारिक और सामाजिक संबंध</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-purple-600 mr-2 font-bold">•</span>
+                <span>समय पर मानसिक स्वास्थ्य सहायता लेना</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-purple-600 mr-2 font-bold">•</span>
+                <span>तनाव प्रबंधन और स्वस्थ आदतें</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl shadow-lg p-6 border-l-4 border-orange-600">
+            <h3 className="text-2xl font-bold text-orange-700 mb-4 flex items-center">
+              <span className="mr-2">📞</span> आपातकालीन सहायता
+            </h3>
+            <div className="space-y-4 text-gray-700">
+              <p className="font-semibold text-red-700">
+                यदि आप या कोई प्रियजन गंभीर मानसिक संकट में है:
+              </p>
+              <div className="bg-white rounded-lg p-4 border-2 border-orange-300">
+                <p className="font-bold text-lg mb-2">तुरंत संपर्क करें:</p>
+                <p className="text-2xl font-bold text-orange-600">
+                  📞 878 948 2183
+                </p>
+              </div>
+              <p className="text-sm">
+                <strong>याद रखें:</strong> मानसिक बीमारी से उबरना संभव है। सही उपचार और समर्थन से अधिकांश लोग पूर्ण और उत्पादक जीवन जीते हैं।
               </p>
             </div>
           </div>
@@ -111,11 +190,14 @@ export default function ADHD() {
 
         <div className="text-center mt-10">
           <a
-            href="tel:9450016305"
+            href="tel:8789482183"
             className="inline-block bg-green-600 text-white text-lg font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-green-700 transition duration-300 transform hover:scale-105"
           >
-            📞 ADHD के इलाज के लिए संपर्क करें
+            📞 मानसिक स्वास्थ्य परामर्श के लिए संपर्क करें
           </a>
+          <p className="mt-4 text-gray-600 text-sm max-w-2xl mx-auto">
+            लगभग आधे भारतीय लोग अपने जीवन में कभी न कभी मानसिक स्वास्थ्य समस्या का अनुभव करते हैं। आप अकेले नहीं हैं - सहायता उपलब्ध है।
+          </p>
         </div>
       </div>
     </section>

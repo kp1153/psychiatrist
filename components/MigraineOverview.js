@@ -1,3 +1,4 @@
+"use client";
 import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -502,7 +503,6 @@ export default function MigraineOverview() {
                       </ul>
                     </div>
                     <div>
-                      <div>
                       <Badge className="mb-2">Antiemetics (मतली के लिए)</Badge>
                       <ul className="text-sm space-y-1 text-gray-700">
                         <li>• Metoclopramide</li>
@@ -520,254 +520,257 @@ export default function MigraineOverview() {
                   </div>
                 </CardContent>
               </Card>
-
               <Card className="shadow-lg">
-                <CardHeader className="bg-gradient-to-r from-purple-50 to-pink-50">
-                  <CardTitle>Preventive Treatment (निवारक उपचार)</CardTitle>
-                  <CardDescription>बार-बार होने वाले माइग्रेन के लिए</CardDescription>
-                </CardHeader>
-                <CardContent className="pt-4">
-                  <div className="space-y-4">
-                    <div>
-                      <Badge className="mb-2">Beta-Blockers</Badge>
-                      <ul className="text-sm space-y-1 text-gray-700">
-                        <li>• Propranolol</li>
-                        <li>• Metoprolol</li>
-                        <li>• Timolol</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <Badge className="mb-2">Antidepressants</Badge>
-                      <ul className="text-sm space-y-1 text-gray-700">
-                        <li>• Amitriptyline</li>
-                        <li>• Venlafaxine</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <Badge className="mb-2">Anticonvulsants</Badge>
-                      <ul className="text-sm space-y-1 text-gray-700">
-                        <li>• Topiramate</li>
-                        <li>• Valproate</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <Badge className="mb-2">CGRP mAbs (मासिक इंजेक्शन)</Badge>
-                      <ul className="text-sm space-y-1 text-gray-700">
-                        <li>• Erenumab</li>
-                        <li>• Fremanezumab</li>
-                        <li>• Galcanezumab</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <Badge className="mb-2">Botox</Badge>
-                      <p className="text-sm text-gray-700">Chronic migraine के लिए (हर 3 महीने)</p>
-                    </div>
+              <CardHeader className="bg-gradient-to-r from-purple-50 to-pink-50">
+                <CardTitle>Preventive Treatment (निवारक उपचार)</CardTitle>
+                <CardDescription>बार-बार होने वाले माइग्रेन के लिए</CardDescription>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <div className="space-y-4">
+                  <div>
+                    <Badge className="mb-2">Beta-Blockers</Badge>
+                    <ul className="text-sm space-y-1 text-gray-700">
+                      <li>• Propranolol</li>
+                      <li>• Metoprolol</li>
+                      <li>• Timolol</li>
+                    </ul>
                   </div>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-lg">
-                <CardHeader className="bg-gradient-to-r from-green-50 to-emerald-50">
-                  <CardTitle>Natural & Alternative</CardTitle>
-                  <CardDescription>गैर-दवा विकल्प</CardDescription>
-                </CardHeader>
-                <CardContent className="pt-4">
-                  <div className="space-y-3">
-                    <div>
-                      <p className="font-semibold text-sm mb-1">सप्लीमेंट्स</p>
-                      <ul className="text-sm space-y-1 text-gray-700">
-                        <li>• Magnesium (400-500 mg)</li>
-                        <li>• Riboflavin (Vitamin B2) - 400 mg</li>
-                        <li>• Coenzyme Q10 - 100-300 mg</li>
-                        <li>• Feverfew (पुदीना)</li>
-                        <li>• Butterbur</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-sm mb-1">अन्य थेरेपी</p>
-                      <ul className="text-sm space-y-1 text-gray-700">
-                        <li>• Acupuncture (सुई चिकित्सा)</li>
-                        <li>• Biofeedback</li>
-                        <li>• Massage therapy</li>
-                      </ul>
-                    </div>
+                  <div>
+                    <Badge className="mb-2">Antidepressants</Badge>
+                    <ul className="text-sm space-y-1 text-gray-700">
+                      <li>• Amitriptyline</li>
+                      <li>• Venlafaxine</li>
+                    </ul>
                   </div>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-lg">
-                <CardHeader className="bg-gradient-to-r from-amber-50 to-orange-50">
-                  <CardTitle>Emergency Treatment</CardTitle>
-                  <CardDescription>गंभीर मामलों के लिए</CardDescription>
-                </CardHeader>
-                <CardContent className="pt-4">
-                  <Alert className="mb-3 bg-red-50 border-red-200">
-                    <AlertTriangle className="h-4 w-4" />
-                    <AlertDescription className="text-sm">
-                      अगर सामान्य दवाएं काम न करें या लक्षण बहुत गंभीर हों तो तुरंत डॉक्टर से संपर्क करें
-                    </AlertDescription>
-                  </Alert>
-                  <ul className="text-sm space-y-2 text-gray-700">
-                    <li>• <strong>IV DHE</strong> (Dihydroergotamine)</li>
-                    <li>• <strong>IV Corticosteroids</strong></li>
-                    <li>• <strong>IV Fluids</strong> (निर्जलीकरण के लिए)</li>
-                    <li>• <strong>Nerve blocks</strong></li>
-                    <li>• <strong>Neuromodulation devices</strong></li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </TabsContent>
-
-          {/* Management Tab */}
-          <TabsContent value="management" className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <Card className="shadow-lg">
-                <CardHeader className="bg-gradient-to-r from-blue-50 to-cyan-50">
-                  <CardTitle className="flex items-center gap-2">
-                    <Heart className="w-5 h-5 text-blue-600" />
-                    जीवनशैली में बदलाव
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="pt-4">
-                  <div className="space-y-3">
-                    <div>
-                      <p className="font-semibold text-sm mb-1">नींद की स्वच्छता</p>
-                      <ul className="text-sm space-y-1 text-gray-700">
-                        <li>• हर दिन एक ही समय पर सोएं और जागें</li>
-                        <li>• 7-9 घंटे की नींद लें</li>
-                        <li>• सोने से पहले screen time कम करें</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-sm mb-1">नियमित भोजन</p>
-                      <ul className="text-sm space-y-1 text-gray-700">
-                        <li>• भोजन न छोड़ें</li>
-                        <li>• हाइड्रेटेड रहें (8-10 गिलास पानी)</li>
-                        <li>• ट्रिगर फूड्स से बचें</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-sm mb-1">व्यायाम</p>
-                      <ul className="text-sm space-y-1 text-gray-700">
-                        <li>• नियमित moderate exercise</li>
-                        <li>• Yoga और stretching</li>
-                        <li>• अत्यधिक परिश्रम से बचें</li>
-                      </ul>
-                    </div>
+                  <div>
+                    <Badge className="mb-2">Anticonvulsants</Badge>
+                    <ul className="text-sm space-y-1 text-gray-700">
+                      <li>• Topiramate</li>
+                      <li>• Valproate</li>
+                    </ul>
                   </div>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-lg">
-                <CardHeader className="bg-gradient-to-r from-purple-50 to-pink-50">
-                  <CardTitle className="flex items-center gap-2">
-                    <Brain className="w-5 h-5 text-purple-600" />
-                    तनाव प्रबंधन
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="pt-4">
-                  <ul className="space-y-2 text-sm text-gray-700">
-                    <li>• <strong>Meditation</strong> (ध्यान) - दैनिक 10-20 मिनट</li>
-                    <li>• <strong>Deep breathing exercises</strong></li>
-                    <li>• <strong>Progressive muscle relaxation</strong></li>
-                    <li>• <strong>Cognitive behavioral therapy (CBT)</strong></li>
-                    <li>• <strong>Mindfulness practices</strong></li>
-                    <li>• <strong>Time management</strong></li>
-                    <li>• <strong>Social support</strong> - परिवार और दोस्तों से जुड़े रहें</li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-lg">
-                <CardHeader className="bg-gradient-to-r from-green-50 to-emerald-50">
-                  <CardTitle className="flex items-center gap-2">
-                    <Activity className="w-5 h-5 text-green-600" />
-                    माइग्रेन डायरी
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="pt-4">
-                  <p className="text-sm text-gray-700 mb-3">निम्नलिखित जानकारी रिकॉर्ड करें:</p>
-                  <ul className="space-y-2 text-sm text-gray-700">
-                    <li>• दर्द की तारीख और समय</li>
-                    <li>• तीव्रता (1-10 scale)</li>
-                    <li>• अवधि</li>
-                    <li>• लक्षण</li>
-                    <li>• संभावित ट्रिगर्स</li>
-                    <li>• ली गई दवाएं और प्रभाव</li>
-                    <li>• मासिक धर्म चक्र (महिलाओं के लिए)</li>
-                    <li>• नींद पैटर्न</li>
-                    <li>• तनाव स्तर</li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-lg">
-                <CardHeader className="bg-gradient-to-r from-rose-50 to-red-50">
-                  <CardTitle className="flex items-center gap-2">
-                    <AlertTriangle className="w-5 h-5 text-rose-600" />
-                    डॉक्टर से कब मिलें
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="pt-4">
-                  <Alert className="mb-3 bg-red-100 border-red-300">
-                    <AlertTriangle className="h-4 w-4" />
-                    <AlertTitle>तुरंत आपातकालीन सहायता लें अगर:</AlertTitle>
-                  </Alert>
-                  <ul className="space-y-2 text-sm text-gray-700">
-                    <li>• अचानक, गंभीर "thunderclap" headache</li>
-                    <li>• बुखार, गर्दन में अकड़न के साथ सिरदर्द</li>
-                    <li>• दृष्टि में परिवर्तन, बोलने या चलने में कठिनाई</li>
-                    <li>• सिर की चोट के बाद सिरदर्द</li>
-                    <li>• 50 साल की उम्र के बाद पहली बार सिरदर्द</li>
-                    <li>• सामान्य पैटर्न में बदलाव</li>
-                    <li>• Aura 1 घंटे से अधिक समय तक</li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-lg md:col-span-2">
-                <CardHeader className="bg-gradient-to-r from-indigo-50 to-purple-50">
-                  <CardTitle className="flex items-center gap-2">
-                    <Zap className="w-5 h-5 text-indigo-600" />
-                    Acute Attack के दौरान क्या करें
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="pt-4">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <p className="font-semibold text-sm mb-2 text-green-700">✓ करें:</p>
-                      <ul className="space-y-1 text-sm text-gray-700">
-                        <li>• जल्दी दवा लें (पहले 30-60 मिनट में)</li>
-                        <li>• अंधेरे, शांत कमरे में आराम करें</li>
-                        <li>• ठंडी या गर्म पट्टी लगाएं</li>
-                        <li>• पानी पिएं</li>
-                        <li>• गहरी सांसें लें</li>
-                        <li>• हल्का खाना खाएं</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-sm mb-2 text-red-700">✗ न करें:</p>
-                      <ul className="space-y-1 text-sm text-gray-700">
-                        <li>• तेज रोशनी या शोर के संपर्क में न आएं</li>
-                        <li>• Screen time न बढ़ाएं</li>
-                        <li>• शराब न पिएं</li>
-                        <li>• भारी भोजन न करें</li>
-                        <li>• तनावपूर्ण गतिविधियां न करें</li>
-                        <li>• दवा का अधिक सेवन न करें</li>
-                      </ul>
-                    </div>
+                  <div>
+                    <Badge className="mb-2">CGRP mAbs (मासिक इंजेक्शन)</Badge>
+                    <ul className="text-sm space-y-1 text-gray-700">
+                      <li>• Erenumab</li>
+                      <li>• Fremanezumab</li>
+                      <li>• Galcanezumab</li>
+                    </ul>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
+                  <div>
+                    <Badge className="mb-2">Botox</Badge>
+                    <p className="text-sm text-gray-700">Chronic migraine के लिए (हर 3 महीने)</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
-            <Alert className="bg-blue-50 border-blue-200">
-              <Heart className="h-4 w-4 text-blue-600" />
-              <AlertTitle>याद रखें</AlertTitle>
-              <AlertDescription>
-                माइग्रेन एक प्रबंधनीय स्थिति है। सही उपचार, जीवनशैली में बदलाव, और ट्रिगर्स की पहचान से अधिकांश लोग अपने माइग्रेन को नियंत्रित कर सकते हैं। धैर्य रखें और अपने डॉक्टर के साथ मिलकर काम करें।
-              </AlertDescription>
-            </Alert>
-          </TabsContent>
-        </Tabs>
+            <Card className="shadow-lg">
+              <CardHeader className="bg-gradient-to-r from-green-50 to-emerald-50">
+                <CardTitle>Natural & Alternative</CardTitle>
+                <CardDescription>गैर-दवा विकल्प</CardDescription>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <div className="space-y-3">
+                  <div>
+                    <p className="font-semibold text-sm mb-1">सप्लीमेंट्स</p>
+                    <ul className="text-sm space-y-1 text-gray-700">
+                      <li>• Magnesium (400-500 mg)</li>
+                      <li>• Riboflavin (Vitamin B2) - 400 mg</li>
+                      <li>• Coenzyme Q10 - 100-300 mg</li>
+                      <li>• Feverfew (पुदीना)</li>
+                      <li>• Butterbur</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm mb-1">अन्य थेरेपी</p>
+                    <ul className="text-sm space-y-1 text-gray-700">
+                      <li>• Acupuncture (सुई चिकित्सा)</li>
+                      <li>• Biofeedback</li>
+                      <li>• Massage therapy</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-lg">
+              <CardHeader className="bg-gradient-to-r from-amber-50 to-orange-50">
+                <CardTitle>Emergency Treatment</CardTitle>
+                <CardDescription>गंभीर मामलों के लिए</CardDescription>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <Alert className="mb-3 bg-red-50 border-red-200">
+                  <AlertTriangle className="h-4 w-4" />
+                  <AlertDescription className="text-sm">
+                    अगर सामान्य दवाएं काम न करें या लक्षण बहुत गंभीर हों तो तुरंत डॉक्टर से संपर्क करें
+                  </AlertDescription>
+                </Alert>
+                <ul className="text-sm space-y-2 text-gray-700">
+                  <li>• <strong>IV DHE</strong> (Dihydroergotamine)</li>
+                  <li>• <strong>IV Corticosteroids</strong></li>
+                  <li>• <strong>IV Fluids</strong> (निर्जलीकरण के लिए)</li>
+                  <li>• <strong>Nerve blocks</strong></li>
+                  <li>• <strong>Neuromodulation devices</strong></li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </TabsContent>
+
+        {/* Management Tab */}
+        <TabsContent value="management" className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card className="shadow-lg">
+              <CardHeader className="bg-gradient-to-r from-blue-50 to-cyan-50">
+                <CardTitle className="flex items-center gap-2">
+                  <Heart className="w-5 h-5 text-blue-600" />
+                  जीवनशैली में बदलाव
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <div className="space-y-3">
+                  <div>
+                    <p className="font-semibold text-sm mb-1">नींद की स्वच्छता</p>
+                    <ul className="text-sm space-y-1 text-gray-700">
+                      <li>• हर दिन एक ही समय पर सोएं और जागें</li>
+                      <li>• 7-9 घंटे की नींद लें</li>
+                      <li>• सोने से पहले screen time कम करें</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm mb-1">नियमित भोजन</p>
+                    <ul className="text-sm space-y-1 text-gray-700">
+                      <li>• भोजन न छोड़ें</li>
+                      <li>• हाइड्रेटेड रहें (8-10 गिलास पानी)</li>
+                      <li>• ट्रिगर फूड्स से बचें</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm mb-1">व्यायाम</p>
+                    <ul className="text-sm space-y-1 text-gray-700">
+                      <li>• नियमित moderate exercise</li>
+                      <li>• Yoga और stretching</li>
+                      <li>• अत्यधिक परिश्रम से बचें</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-lg">
+              <CardHeader className="bg-gradient-to-r from-purple-50 to-pink-50">
+                <CardTitle className="flex items-center gap-2">
+                  <Brain className="w-5 h-5 text-purple-600" />
+                  तनाव प्रबंधन
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li>• <strong>Meditation</strong> (ध्यान) - दैनिक 10-20 मिनट</li>
+                  <li>• <strong>Deep breathing exercises</strong></li>
+                  <li>• <strong>Progressive muscle relaxation</strong></li>
+                  <li>• <strong>Cognitive behavioral therapy (CBT)</strong></li>
+                  <li>• <strong>Mindfulness practices</strong></li>
+                  <li>• <strong>Time management</strong></li>
+                  <li>• <strong>Social support</strong> - परिवार और दोस्तों से जुड़े रहें</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-lg">
+              <CardHeader className="bg-gradient-to-r from-green-50 to-emerald-50">
+                <CardTitle className="flex items-center gap-2">
+                  <Activity className="w-5 h-5 text-green-600" />
+                  माइग्रेन डायरी
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <p className="text-sm text-gray-700 mb-3">निम्नलिखित जानकारी रिकॉर्ड करें:</p>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li>• दर्द की तारीख और समय</li>
+                  <li>• तीव्रता (1-10 scale)</li>
+                  <li>• अवधि</li>
+                  <li>• लक्षण</li>
+                  <li>• संभावित ट्रिगर्स</li>
+                  <li>• ली गई दवाएं और प्रभाव</li>
+                  <li>• मासिक धर्म चक्र (महिलाओं के लिए)</li>
+                  <li>• नींद पैटर्न</li>
+                  <li>• तनाव स्तर</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-lg">
+              <CardHeader className="bg-gradient-to-r from-rose-50 to-red-50">
+                <CardTitle className="flex items-center gap-2">
+                  <AlertTriangle className="w-5 h-5 text-rose-600" />
+                  डॉक्टर से कब मिलें
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <Alert className="mb-3 bg-red-100 border-red-300">
+                  <AlertTriangle className="h-4 w-4" />
+                  <AlertTitle>तुरंत आपातकालीन सहायता लें अगर:</AlertTitle>
+                </Alert>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li>• अचानक, गंभीर "thunderclap" headache</li>
+                  <li>• बुखार, गर्दन में अकड़न के साथ सिरदर्द</li>
+                  <li>• दृष्टि में परिवर्तन, बोलने या चलने में कठिनाई</li>
+                  <li>• सिर की चोट के बाद सिरदर्द</li>
+                  <li>• 50 साल की उम्र के बाद पहली बार सिरदर्द</li>
+                  <li>• सामान्य पैटर्न में बदलाव</li>
+                  <li>• Aura 1 घंटे से अधिक समय तक</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-lg md:col-span-2">
+              <CardHeader className="bg-gradient-to-r from-indigo-50 to-purple-50">
+                <CardTitle className="flex items-center gap-2">
+                  <Zap className="w-5 h-5 text-indigo-600" />
+                  Acute Attack के दौरान क्या करें
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <p className="font-semibold text-sm mb-2 text-green-700">✓ करें:</p>
+                    <ul className="space-y-1 text-sm text-gray-700">
+                      <li>• जल्दी दवा लें (पहले 30-60 मिनट में)</li>
+                      <li>• अंधेरे, शांत कमरे में आराम करें</li>
+                      <li>• ठंडी या गर्म पट्टी लगाएं</li>
+                      <li>• पानी पिएं</li>
+                      <li>• गहरी सांसें लें</li>
+                      <li>• हल्का खाना खाएं</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm mb-2 text-red-700">✗ न करें:</p>
+                    <ul className="space-y-1 text-sm text-gray-700">
+                      <li>• तेज रोशनी या शोर के संपर्क में न आएं</li>
+                      <li>• Screen time न बढ़ाएं</li>
+                      <li>• शराब न पिएं</li>
+                      <li>• भारी भोजन न करें</li>
+                      <li>• तनावपूर्ण गतिविधियां न करें</li>
+                      <li>• दवा का अधिक सेवन न करें</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Alert className="bg-blue-50 border-blue-200">
+            <Heart className="h-4 w-4 text-blue-600" />
+            <AlertTitle>याद रखें</AlertTitle>
+            <AlertDescription>
+              माइग्रेन एक प्रबंधनीय स्थिति है। सही उपचार, जीवनशैली में बदलाव, और ट्रिगर्स की पहचान से अधिकांश लोग अपने माइग्रेन को नियंत्रित कर सकते हैं। धैर्य रखें और अपने डॉक्टर के साथ मिलकर काम करें।
+            </AlertDescription>
+          </Alert>
+        </TabsContent>
+      </Tabs>
+    </div>
+  </div>
+);
+}

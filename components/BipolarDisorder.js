@@ -1,122 +1,133 @@
+// ================= PART 1 / 4 =================
 "use client";
-import React from "react";
+import { useState } from 'react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Badge } from '@/components/ui/badge';
+import { Activity, Brain, Heart, AlertTriangle, Shield, TrendingUp, Pill, Users, Zap, Moon, Sun, Phone } from 'lucide-react';
 
-export default function BipolarDisorder() {
+export default function BipolarDisorderOverview() {
   return (
-    <section className="py-16 bg-gradient-to-br from-purple-50 to-pink-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-purple-800 mb-4">
-            🔄 बाइपोलर डिसऑर्डर (Bipolar Disorder)
-          </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            बाइपोलर डिसऑर्डर में मूड में अत्यधिक बदलाव होते हैं - कभी बहुत खुशी
-            (मेनिया) तो कभी गहरा अवसाद।
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <header className="text-center mb-12">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <Activity className="w-12 h-12 text-purple-600" />
+            <h1 className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              बाइपोलर डिसऑर्डर (Bipolar Disorder)
+            </h1>
+            <Brain className="w-12 h-12 text-pink-600" />
+          </div>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            मूड में अत्यधिक उतार-चढ़ाव का मानसिक स्वास्थ्य विकार - लक्षण, निदान और उपचार
           </p>
+        </header>
+
+        <Tabs defaultValue="overview" className="w-full">
+          <TabsList className="grid w-full grid-cols-5 mb-8 bg-white/50 backdrop-blur-sm">
+            <TabsTrigger value="overview"><Brain className="w-4 h-4" />अवलोकन</TabsTrigger>
+            <TabsTrigger value="symptoms"><Activity className="w-4 h-4" />लक्षण</TabsTrigger>
+            <TabsTrigger value="types"><TrendingUp className="w-4 h-4" />प्रकार</TabsTrigger>
+            <TabsTrigger value="treatment"><Pill className="w-4 h-4" />उपचार</TabsTrigger>
+            <TabsTrigger value="lifestyle"><Heart className="w-4 h-4" />जीवनशैली</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="overview" className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>बाइपोलर डिसऑर्डर क्या है?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>बाइपोलर डिसऑर्डर एक मानसिक स्वास्थ्य स्थिति है जिसमें मैनिक और डिप्रेसिव एपिसोड होते हैं।</p>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="symptoms" className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>मैनिक एपिसोड</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul>
+                  <li>• अत्यधिक ऊर्जा</li>
+                  <li>• नींद की जरूरत कम</li>
+                  <li>• जोखिम भरा व्यवहार</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>डिप्रेसिव एपिसोड</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul>
+                  <li>• गहरी उदासी</li>
+                  <li>• ऊर्जा की कमी</li>
+                  <li>• आत्महत्या के विचार</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="types" className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>बाइपोलर I</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Badge>गंभीर</Badge>
+                <p>पूर्ण मैनिक एपिसोड के साथ</p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>बाइपोलर II</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Badge>मध्यम</Badge>
+                <p>हाइपोमेनिया + डिप्रेशन</p>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="lifestyle" className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>जीवनशैली प्रबंधन</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul>
+                  <li>• नियमित नींद</li>
+                  <li>• तनाव प्रबंधन</li>
+                  <li>• शराब से परहेज</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+        </Tabs>
+
+        <div className="mt-12">
+          <Card>
+            <CardHeader>
+              <CardTitle>
+                <Phone className="w-6 h-6" /> आपातकालीन सहायता
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>भारत: 112</p>
+            </CardContent>
+          </Card>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-purple-600">
-            <h3 className="text-2xl font-bold text-purple-700 mb-4 flex items-center">
-              <span className="mr-2">🔍</span> मुख्य लक्षण
-            </h3>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-start">
-                <span className="text-purple-600 mr-2 font-bold">•</span>
-                <span>मूड में अचानक और तीव्र बदलाव</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-600 mr-2 font-bold">•</span>
-                <span>मेनिया: अत्यधिक ऊर्जा, बहुत कम नींद की जरूरत</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-600 mr-2 font-bold">•</span>
-                <span>बहुत तेज बोलना और विचारों का तेजी से आना</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-600 mr-2 font-bold">•</span>
-                <span>जोखिम भरे व्यवहार (ज्यादा खर्च, लापरवाही)</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-600 mr-2 font-bold">•</span>
-                <span>डिप्रेशन: गहरी उदासी और निराशा</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-600 mr-2 font-bold">•</span>
-                <span>चिड़चिड़ापन और गुस्सा</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-600 mr-2 font-bold">•</span>
-                <span>ध्यान केंद्रित करने में कठिनाई</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-600 mr-2 font-bold">•</span>
-                <span>सामाजिक और काम में समस्याएं</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-600">
-            <h3 className="text-2xl font-bold text-green-700 mb-4 flex items-center">
-              <span className="mr-2">💊</span> हमारा उपचार
-            </h3>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2 font-bold">✓</span>
-                <span>
-                  <strong>मूड स्टेबलाइजर्स</strong> - दवाओं से मूड संतुलन
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2 font-bold">✓</span>
-                <span>
-                  <strong>साइकोथेरेपी</strong> - CBT और परिवार थेरेपी
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2 font-bold">✓</span>
-                <span>
-                  <strong>ब्रेन पोलराइजेशन थेरेपी</strong> - मूड स्थिरता के लिए
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2 font-bold">✓</span>
-                <span>
-                  <strong>TDCS थेरेपी</strong> - मानसिक संतुलन
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2 font-bold">✓</span>
-                <span>
-                  <strong>लाइफस्टाइल मैनेजमेंट</strong> - नींद और दिनचर्या
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2 font-bold">✓</span>
-                <span>
-                  <strong>नियमित निगरानी</strong> - लंबी अवधि की देखभाल
-                </span>
-              </li>
-            </ul>
-
-            <div className="mt-6 p-4 bg-green-50 rounded-lg border border-green-200">
-              <p className="text-sm text-gray-700">
-                <strong className="text-green-700">नोट:</strong> बाइपोलर
-                डिसऑर्डर को सही दवा और थेरेपी से नियंत्रित किया जा सकता है।
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center mt-10">
-          <a
-            href="tel:9450016305"
-            className="inline-block bg-purple-600 text-white text-lg font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-purple-700 transition duration-300 transform hover:scale-105"
-          >
-            📞 बाइपोलर के इलाज के लिए संपर्क करें
-          </a>
-        </div>
+        <footer className="mt-12 text-center text-sm text-gray-600">
+          <p>यह जानकारी केवल शैक्षिक उद्देश्यों के लिए है।</p>
+        </footer>
       </div>
-    </section>
+    </div>
   );
 }

@@ -1,3 +1,4 @@
+"use client";
 import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -912,34 +913,166 @@ export default function EpilepsyOverview() {
                       <li>• गंभीर एलर्जी प्रतिक्रिया</li>
                     </ul>
                   </div>
-                 <Alert className="bg-red-50 border-red-300">
-  <AlertTriangle className="h-4 w-4 text-red-600" />
-  <AlertDescription className="text-sm text-red-700">
-    <ul className="space-y-1">
-      <li className="flex items-start gap-2">
-        <span className="text-red-600 mt-1">•</span>
-        <span>
-          गर्भवती महिला में दवा का उपयोग विशेष सावधानी के साथ किया जाना चाहिए।
-        </span>
-      </li>
-      <li className="flex items-start gap-2">
-        <span className="text-red-600 mt-1">•</span>
-        <span>
-          अत्यधिक भ्रम और असमंजस, जो कई मिनटों से लेकर घंटों तक रह सकता है।
-        </span>
-      </li>
-      <li className="flex items-start gap-2">
-        <span className="text-red-600 mt-1">•</span>
-        <span>
-          अचानक व्यवहार में बदलाव या आत्मघाती विचार दिखाई दें।
-        </span>
-      </li>
-      <li className="flex items-start gap-2">
-        <span className="text-red-600 mt-1">•</span>
-        <span>
-          त्वचा पर गंभीर रैश, बुखार या चेहरे/होंठों में सूजन।
-        </span>
-      </li>
-    </ul>
-  </AlertDescription>
-</Alert>
+          <Alert className="bg-red-50 border-red-300">
+                   <AlertTriangle className="h-4 w-4 text-red-600" />
+                   <AlertDescription className="text-sm text-red-700">
+                     गर्भवती महिलाओं में कुछ दवाएं (विशेष रूप से Valproate) जन्म दोषों का कारण बन सकती हैं। हमेशा डॉक्टर को गर्भावस्था के बारे में बताएं।
+                   </AlertDescription>
+                 </Alert>
+               </CardContent>
+              </Card>
+
+              <Card className="shadow-lg">
+                <CardHeader className="bg-gradient-to-r from-green-50 to-emerald-50">
+                  <CardTitle className="flex items-center gap-2">
+                    <Activity className="w-6 h-6 text-green-600" />
+                    सर्जरी (Surgery)
+                  </CardTitle>
+                  <CardDescription>जब दवाएं काम नहीं करतीं</CardDescription>
+                </CardHeader>
+                <CardContent className="pt-4">
+                  <p className="text-sm text-gray-700 mb-3">
+                    लगभग 30% मामलों में दवाएं पूरी तरह प्रभावी नहीं होतीं। ऐसे में सर्जरी विकल्प हो सकती है।
+                  </p>
+                  <ul className="space-y-2 text-sm text-gray-700">
+                    <li>• <strong>Temporal Lobectomy</strong> - सबसे आम</li>
+                    <li>• <strong>Lesionectomy</strong> - विशिष्ट क्षेत्र हटाना</li>
+                    <li>• <strong>Corpus Callosotomy</strong> - गंभीर मामलों में</li>
+                    <li>• <strong>Hemispherectomy</strong> - बच्चों में विशेष स्थितियों में</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Card className="shadow-lg">
+              <CardHeader className="bg-gradient-to-r from-orange-50 to-amber-50">
+                <CardTitle>अन्य उपचार विकल्प</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div className="bg-white p-4 rounded-lg border-l-4 border-orange-500">
+                    <h4 className="font-bold text-orange-700 mb-2">Vagus Nerve Stimulation (VNS)</h4>
+                    <p className="text-sm text-gray-700">गर्दन में एक उपकरण लगाया जाता है जो vagus nerve को उत्तेजित करता है</p>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg border-l-4 border-orange-500">
+                    <h4 className="font-bold text-orange-700 mb-2">Ketogenic Diet</h4>
+                    <p className="text-sm text-gray-700">उच्च वसा, कम कार्बोहाइड्रेट आहार - बच्चों में प्रभावी</p>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg border-l-4 border-orange-500">
+                    <h4 className="font-bold text-orange-700 mb-2">Responsive Neurostimulation (RNS)</h4>
+                    <p className="text-sm text-gray-700">मस्तिष्क में प्रत्यारोपित उपकरण जो दौरों का पता लगाकर रोकता है</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          {/* Management Tab */}
+          <TabsContent value="management" className="space-y-6">
+            <Card className="shadow-xl">
+              <CardHeader className="bg-gradient-to-r from-pink-100 to-rose-100">
+                <CardTitle className="text-2xl flex items-center gap-2">
+                  <Heart className="w-7 h-7 text-pink-600" />
+                  जीवन प्रबंधन और देखभाल
+                </CardTitle>
+              </CardHeader>
+            </Card>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card className="shadow-lg">
+                <CardHeader className="bg-gradient-to-r from-blue-50 to-cyan-50">
+                  <CardTitle className="flex items-center gap-2">
+                    <Shield className="w-6 h-6 text-blue-600" />
+                    दौरे के दौरान प्राथमिक उपचार
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="pt-4">
+                  <div className="space-y-3">
+                    <div className="bg-green-50 p-3 rounded-lg border-l-4 border-green-500">
+                      <h4 className="font-bold text-green-700 mb-1">✅ करें</h4>
+                      <ul className="space-y-1 text-sm text-gray-700">
+                        <li>• व्यक्ति को सुरक्षित स्थान पर लिटाएं</li>
+                        <li>• सिर के नीचे नरम कुछ रखें</li>
+                        <li>• समय नोट करें</li>
+                        <li>• तंग कपड़े ढीले करें</li>
+                        <li>• व्यक्ति को करवट पर लिटाएं</li>
+                        <li>• शांत रहें और दूसरों को भी शांत रखें</li>
+                      </ul>
+                    </div>
+                    <div className="bg-red-50 p-3 rounded-lg border-l-4 border-red-500">
+                      <h4 className="font-bold text-red-700 mb-1">❌ न करें</h4>
+                      <ul className="space-y-1 text-sm text-gray-700">
+                        <li>• मुंह में कुछ भी न डालें</li>
+                        <li>• व्यक्ति को पकड़ें या रोकें नहीं</li>
+                        <li>• मुंह खोलने की कोशिश न करें</li>
+                        <li>• पानी या दवा देने की कोशिश न करें</li>
+                        <li>• CPR न करें (जब तक सांस न रुक जाए)</li>
+                      </ul>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="shadow-lg">
+                <CardHeader className="bg-gradient-to-r from-purple-50 to-pink-50">
+                  <CardTitle className="flex items-center gap-2">
+                    <Heart className="w-6 h-6 text-purple-600" />
+                    दैनिक जीवन में सावधानियां
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="pt-4">
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-start gap-2">
+                      <Badge className="bg-purple-500 mt-1">1</Badge>
+                      <div>
+                        <strong>नियमित दवा:</strong> बिल्कुल समय पर, कभी न छोड़ें
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Badge className="bg-purple-500 mt-1">2</Badge>
+                      <div>
+                        <strong>पर्याप्त नींद:</strong> 7-9 घंटे रोज
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Badge className="bg-purple-500 mt-1">3</Badge>
+                      <div>
+                        <strong>शराब और नशीले पदार्थ:</strong> बिल्कुल न लें
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Badge className="bg-purple-500 mt-1">4</Badge>
+                      <div>
+                        <strong>तनाव प्रबंधन:</strong> योग, ध्यान, व्यायाम
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Badge className="bg-purple-500 mt-1">5</Badge>
+                      <div>
+                        <strong>ट्रिगर्स से बचें:</strong> टिमटिमाती रोशनी, अत्यधिक गर्मी
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Badge className="bg-purple-500 mt-1">6</Badge>
+                      <div>
+                        <strong>सुरक्षा:</strong> अकेले तैराकी न करें, ऊंचाई से सावधान
+                      </div>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Alert className="bg-blue-50 border-blue-300">
+              <Phone className="h-5 w-5 text-blue-600" />
+              <AlertTitle className="text-blue-800 font-bold">आपातकालीन संपर्क</AlertTitle>
+              <AlertDescription className="text-blue-700">
+                हमेशा अपने साथ एक कार्ड रखें जिसमें आपका नाम, मिर्गी की जानकारी, दवाएं और आपातकालीन संपर्क नंबर हो।
+              </AlertDescription>
+            </Alert>
+          </TabsContent>
+        </Tabs>
+      </div>
+    </div>
+  );
+}
