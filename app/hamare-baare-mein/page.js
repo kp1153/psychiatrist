@@ -7,7 +7,7 @@ export default function HamareBaareMein() {
       <div className="bg-green-600 text-white py-12">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-3">हमारे बारे में</h1>
-          <p className="text-xl">नवचेतना न्यूरो-साइकियाट्री सेंटर</p>
+          <p className="text-xl">आरके कुशवाहा न्यूरो-साइकियाट्री सेंटर</p>
         </div>
       </div>
 
@@ -16,10 +16,10 @@ export default function HamareBaareMein() {
         {/* Introduction */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold text-green-700 mb-4">
-            स्वागत है नवचेतना में
+            स्वागत है आरके कुशवाहा न्यूरो-साइकियाट्री सेंटर में
           </h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            नवचेतना न्यूरो-साइकियाट्री सेंटर वाराणसी में स्थित एक आधुनिक मानसिक
+            आरके कुशवाहा न्यूरो-साइकियाट्री सेंटर लखनऊ में स्थित एक आधुनिक मानसिक
             स्वास्थ्य केंद्र है। हम मानसिक स्वास्थ्य की समस्याओं के लिए विशेषज्ञ
             चिकित्सा और उपचार प्रदान करते हैं।
           </p>

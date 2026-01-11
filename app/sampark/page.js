@@ -15,7 +15,7 @@ export default function Sampark() {
         {/* Contact Info Card */}
         <div className="bg-white rounded-lg shadow-xl p-8 mb-8">
           <h2 className="text-3xl font-bold text-green-700 mb-8 text-center">
-            नवचेतना न्यूरो-साइकियाट्री सेंटर
+            आरके कुशवाहा न्यूरो-साइकियाट्री सेंटर
           </h2>
 
           {/* Address */}

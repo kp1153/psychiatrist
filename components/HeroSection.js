@@ -14,35 +14,67 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
+    <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-12">
       <div className="max-w-6xl mx-auto px-4">
-        
-        <div className="relative w-full max-w-3xl mx-auto h-64 md:h-96 mb-10 rounded-lg overflow-hidden shadow-2xl">
-          {images.map((img, idx) => (
-            <img
-              key={idx}
-              src={img}
-              alt={`Slide ${idx + 1}`}
-              className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                idx === current ? "opacity-100" : "opacity-0"
-              }`}
-            />
-          ))}
-        </div>
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          {/* Left Side - Doctor Info */}
+          <div className="order-2 md:order-1">
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h1 className="text-3xl md:text-4xl font-bold text-teal-700 mb-3">
+                डॉ. आर.के. कुशवाहा
+              </h1>
+              <p className="text-xl text-indigo-700 font-semibold mb-6">
+                न्यूरो-साइकियाट्रिस्ट (मानसिक रोग विशेषज्ञ)
+              </p>
 
-        <div className="text-center bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto">
-          <h3 className="text-2xl font-bold text-green-700 mb-3">
-            डॉ. आर.के. कुशवाहा
-          </h3>
-          <p className="text-xl text-indigo-700 font-semibold mb-4">
-            न्यूरो-साइकियाट्रिस्ट (मानसिक रोग विशेषज्ञ)
-          </p>
-          <a
-            href="tel:8789482183"
-            className="inline-block bg-green-600 text-white font-bold text-xl px-8 py-3 rounded-lg hover:bg-green-700 transition-colors shadow-lg"
-          >
-            📞 8789482183
-          </a>
+              {/* Qualifications */}
+              <div className="space-y-2 mb-6">
+                <div className="flex items-start">
+                  <span className="text-teal-600 mr-2">🎓</span>
+                  <span className="text-gray-700">MBBS</span>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-teal-600 mr-2">🎓</span>
+                  <span className="text-gray-700">
+                    DPM (2016) - Central Institute of Psychiatry, Ranchi
+                  </span>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-teal-600 mr-2">🎓</span>
+                  <span className="text-gray-700">DNB (Psychiatry)</span>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-teal-600 mr-2">🏥</span>
+                  <span className="text-gray-700">
+                    Ex-Consultant Psychiatrist, Divisional District Hospital
+                    Varanasi
+                  </span>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-teal-600 mr-2">⏱️</span>
+                  <span className="text-gray-700 font-semibold">
+                    9 वर्ष का अनुभव
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side - Image Slider */}
+          <div className="order-1 md:order-2">
+            <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-2xl">
+              {images.map((img, idx) => (
+                <img
+                  key={idx}
+                  src={img}
+                  alt={`Dr RK Kushwaha ${idx + 1}`}
+                  className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                    idx === current ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

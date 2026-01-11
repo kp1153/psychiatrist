@@ -1,4 +1,7 @@
 import HeroSection from "@/components/HeroSection";
+import InsomniaOverview from "@/components/InsomniaOverview";
+import MigraineOverview from "@/components/MigraineOverview";
+import EpilepsyOverview from "@/components/EpilepsyOverview";
 import Depression from "@/components/Depression";
 import Anxiety from "@/components/Anxiety";
 import BipolarDisorder from "@/components/BipolarDisorder";
@@ -15,6 +18,9 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
+      <InsomniaOverview />
+      <MigraineOverview />
+      <EpilepsyOverview />
       <Depression />
       <Anxiety />
       <BipolarDisorder />
