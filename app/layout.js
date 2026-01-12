@@ -48,6 +48,7 @@ export const metadata = {
     title: "डॉ. आर.के. कुशवाहा | न्यूरो-साइकियाट्रिस्ट, लखनऊ",
     description:
       "लखनऊ में मानसिक और न्यूरोलॉजिकल विकारों का विशेषज्ञ उपचार। Depression, Anxiety, OCD, ADHD का इलाज।",
+      images: ["https://www.drkushwahark.in/og-image.jpg"],
     locale: "hi_IN",
     type: "website",
   },
