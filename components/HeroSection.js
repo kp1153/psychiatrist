@@ -1,10 +1,17 @@
-"use client";
+ "use client";
 
 import { useState, useEffect } from "react";
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
   const images = ["/1.jpg", "/2.jpg"];
+
+  // Calculate years of experience automatically
+  const getExperience = () => {
+    const startYear = 2016; // DPM completion year
+    const currentYear = new Date().getFullYear();
+    return currentYear - startYear;
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -23,8 +30,11 @@ export default function HeroSection() {
               <h1 className="text-3xl md:text-4xl font-bold text-teal-700 mb-3">
                 डॉ. आर.के. कुशवाहा
               </h1>
-              <p className="text-xl text-indigo-700 font-semibold mb-6">
-                न्यूरो-साइकियाट्रिस्ट (मानसिक रोग विशेषज्ञ)
+              <p className="text-lg text-indigo-700 font-semibold mb-2">
+                {getExperience()}+ वर्षों का अनुभव | CIP Ranchi से प्रशिक्षित
+              </p>
+              <p className="text-base text-gray-600 font-medium mb-6">
+                हजारों मरीजों का सफल इलाज
               </p>
 
               {/* Qualifications */}
@@ -51,9 +61,9 @@ export default function HeroSection() {
                   </span>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-teal-600 mr-2">⏱️</span>
+                  <span className="text-teal-600 mr-2">📍</span>
                   <span className="text-gray-700 font-semibold">
-                    9 वर्ष का अनुभव
+                    लखनऊ, उत्तर प्रदेश
                   </span>
                 </div>
               </div>
