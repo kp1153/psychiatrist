@@ -25,8 +25,8 @@
     "next": "16.0.8",
     "next-sanity": "^11.6.12",
     "razorpay": "^2.9.6",
-    "react": "19.2.1",
-    "react-dom": "19.2.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
     "sanity": "^4.21.0",
     "styled-components": "6",
     "tailwind-merge": "^3.4.0"
