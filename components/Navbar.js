@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import BookingModal from "./BookingModal";
 
 const Navbar = () => {
@@ -27,20 +28,20 @@ const Navbar = () => {
     { name: "यौन स्वास्थ्य", id: "sexual-dysfunction" },
     { name: "संपर्क करें", href: "/contact" },
     { name: "ब्लॉग", href: "/blog" },
+    { name: "डैशबोर्ड", href: "/dashboard" },
   ];
-  // Smooth scroll function
+
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
       const yOffset = -80;
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      
+
       window.scrollTo({ top: y, behavior: 'smooth' });
       setIsMenuOpen(false);
     }
   };
 
-  // Active section tracking (Scroll Spy)
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems
@@ -61,10 +62,9 @@ const Navbar = () => {
       }
     };
 
-    // Only run on home page
     if (pathname === "/") {
       window.addEventListener('scroll', handleScroll);
-      handleScroll(); // Initial check
+      handleScroll();
     }
 
     return () => window.removeEventListener('scroll', handleScroll);
@@ -76,7 +76,6 @@ const Navbar = () => {
     <>
       <nav className="bg-teal-700 shadow-md">
         <div className="max-w-7xl mx-auto px-4">
-          {/* Top Section - Doctor Info */}
           <div className="text-center py-4 border-b border-teal-600">
             <h1 className="text-2xl font-bold text-white mb-1">
               डॉ. आर.के. कुशवाहा
@@ -86,37 +85,50 @@ const Navbar = () => {
             </p>
           </div>
 
-          {/* Hamburger Menu Section */}
           <div className="flex justify-between items-center py-3">
             <span className="text-white font-semibold">विषय सूची</span>
 
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-md text-white hover:bg-teal-600 focus:outline-none transition-colors"
-              aria-label="Toggle menu"
-              aria-expanded={isMenuOpen}
-            >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+            <div className="flex items-center gap-3">
+              {/* Clerk Auth Buttons */}
+              <SignedOut>
+                <SignInButton mode="modal">
+                  <button className="bg-white text-teal-700 px-4 py-1.5 rounded-md text-sm font-semibold hover:bg-teal-50 transition-colors">
+                    लॉगिन
+                  </button>
+                </SignInButton>
+              </SignedOut>
+
+              <SignedIn>
+                <UserButton afterSignOutUrl="/" />
+              </SignedIn>
+
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="p-2 rounded-md text-white hover:bg-teal-600 focus:outline-none transition-colors"
+                aria-label="Toggle menu"
+                aria-expanded={isMenuOpen}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d={
-                    isMenuOpen
-                      ? "M6 18L18 6M6 6l12 12"
-                      : "M4 6h16M4 12h16M4 18h16"
-                  }
-                />
-              </svg>
-            </button>
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d={
+                      isMenuOpen
+                        ? "M6 18L18 6M6 6l12 12"
+                        : "M4 6h16M4 12h16M4 18h16"
+                    }
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
 
-          {/* Dropdown Menu */}
           {isMenuOpen && (
             <div className="pb-4 border-t border-teal-600 pt-3 animate-fadeIn">
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 mb-3">
@@ -126,9 +138,8 @@ const Navbar = () => {
                       key={item.name}
                       href={item.href}
                       onClick={() => setIsMenuOpen(false)}
-                      className={`text-center px-3 py-2 rounded-md text-white hover:bg-teal-600 font-medium transition-colors ${
-                        isActive(item.href) ? "bg-teal-600 ring-2 ring-white" : ""
-                      }`}
+                      className={`text-center px-3 py-2 rounded-md text-white hover:bg-teal-600 font-medium transition-colors ${isActive(item.href) ? "bg-teal-600 ring-2 ring-white" : ""
+                        }`}
                     >
                       {item.name}
                     </Link>
@@ -136,22 +147,30 @@ const Navbar = () => {
                     <button
                       key={item.name}
                       onClick={() => scrollToSection(item.id)}
-                      className={`text-center px-3 py-2 rounded-md text-white hover:bg-teal-600 font-medium transition-colors ${
-                        activeSection === item.id ? "bg-teal-600 ring-2 ring-yellow-400" : ""
-                      }`}
+                      className={`text-center px-3 py-2 rounded-md text-white hover:bg-teal-600 font-medium transition-colors ${activeSection === item.id ? "bg-teal-600 ring-2 ring-yellow-400" : ""
+                        }`}
                     >
                       {item.name}
                     </button>
                   )
                 ))}
               </div>
-
-              {/* CTA Button */}
+              <SignedIn>
+                <Link
+                  href="/dashboard"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block w-full text-center bg-teal-600 text-white font-semibold px-6 py-2 rounded-md mb-2 hover:bg-teal-500 transition-colors"
+                >
+                  📊 मेरा डैशबोर्ड
+                </Link>
+              </SignedIn>
               <button
                 onClick={() => {
                   setIsMenuOpen(false);
                   setIsBookingModalOpen(true);
                 }}
+
+
                 className="block w-full text-center bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-full transition-all transform hover:scale-105 shadow-lg"
               >
                 📞 ऑनलाइन परामर्श बुक करें
@@ -161,9 +180,9 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <BookingModal 
-        isOpen={isBookingModalOpen} 
-        onClose={() => setIsBookingModalOpen(false)} 
+      <BookingModal
+        isOpen={isBookingModalOpen}
+        onClose={() => setIsBookingModalOpen(false)}
       />
     </>
   );
