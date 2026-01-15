@@ -4,7 +4,7 @@ export default function ContactPage() {
   const contacts = [
     { icon: Phone, label: "फोन", value: "878 948 2183", href: "tel:+918789482183" },
     { icon: Mail, label: "ईमेल", value: "drkushwaha077@gmail.com", href: "mailto:drkushwaha077@gmail.com" },
-    { icon: MapPin, label: "पता", value: "लखनऊ रेलवे स्टेशन के निकट उत्तर प्रदेश", href: null }
+    { icon: MapPin, label: "पता", value: "लखनऊ, उत्तर प्रदेश", href: null }
   ];
 
   return (
