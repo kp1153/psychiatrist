@@ -110,7 +110,7 @@ const Navbar = () => {
 
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-md text-white hover:bg-teal-600 lg:hidden"
+                className="p-2 rounded-md text-white hover:bg-teal-600 xl:hidden"
               >
                 <svg
                   className="h-6 w-6"
@@ -138,13 +138,13 @@ const Navbar = () => {
             className={`
               pt-1 pb-2
               ${isMenuOpen ? "block" : "hidden"}
-              lg:block
+              xl:block
             `}
           >
             <div
               className="
                 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2
-                lg:flex lg:flex-nowrap lg:w-full lg:justify-between
+                xl:flex xl:flex-nowrap xl:w-full xl:justify-between
               "
             >
               {navItems.map((item) =>
@@ -156,7 +156,7 @@ const Navbar = () => {
                     className={`
                       text-white text-center font-medium rounded-md
                       px-3 py-2 text-sm
-                      lg:px-1 lg:py-1 lg:text-[11px] xl:text-[10px]
+                      xl:px-1 xl:py-1 xl:text-[11px]
                       hover:bg-teal-600
                       ${
                         isActive(item.href)
@@ -174,7 +174,7 @@ const Navbar = () => {
                     className={`
                       text-white text-center font-medium rounded-md
                       px-3 py-2 text-sm
-                      lg:px-1 lg:py-1 lg:text-[11px] xl:text-[10px]
+                      xl:px-1 xl:py-1 xl:text-[11px]
                       hover:bg-teal-600
                       ${
                         activeSection === item.id
