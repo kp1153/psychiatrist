@@ -25,9 +25,9 @@ const Navbar = () => {
     { name: "PTSD", id: "ptsd" },
     { name: "नशामुक्ति", id: "addiction" },
     { name: "यौन स्वास्थ्य", id: "sexual-dysfunction" },
+    { name: "संपर्क करें", href: "/contact" },
     { name: "ब्लॉग", href: "/blog" },
   ];
-
   // Smooth scroll function
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
