@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ClerkProvider } from '@clerk/nextjs';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -76,36 +77,38 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="hi">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Physician",
-              name: "Dr. R.K. Kushwaha",
-              description:
-                "Neuro-Psychiatrist specializing in mental health disorders",
-              telephone: "+91-8789482183",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Lucknow",
-                addressRegion: "Uttar Pradesh",
-                addressCountry: "IN",
-              },
-              medicalSpecialty: "Psychiatry",
-            }),
-          }}
-        />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navbar />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="hi">
+        <head>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Physician",
+                name: "Dr. R.K. Kushwaha",
+                description:
+                  "Neuro-Psychiatrist specializing in mental health disorders",
+                telephone: "+91-8789482183",
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: "Lucknow",
+                  addressRegion: "Uttar Pradesh",
+                  addressCountry: "IN",
+                },
+                medicalSpecialty: "Psychiatry",
+              }),
+            }}
+          />
+        </head>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <Navbar />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
