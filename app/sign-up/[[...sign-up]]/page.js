@@ -14,14 +14,3 @@ export default function SignUpPage() {
     </div>
   );
 }
-```
-
-**Folder structure:**
-```
-app/
-  sign-in/
-    [[...sign-in]]/
-      page.js
-  sign-up/
-    [[...sign-up]]/
-      page.js
