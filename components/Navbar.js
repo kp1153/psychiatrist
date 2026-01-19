@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -80,6 +80,13 @@ const Navbar = () => {
 
   return (
     <>
+      <style dangerouslySetInnerHTML={{__html: `
+        .menu-scroll::-webkit-scrollbar { height: 8px; }
+        .menu-scroll::-webkit-scrollbar-track { background: #0f766e; }
+        .menu-scroll::-webkit-scrollbar-thumb { background: #14b8a6; border-radius: 6px; }
+        .menu-scroll::-webkit-scrollbar-thumb:hover { background: #5eead4; }
+      `}} />
+
       <nav className="bg-teal-700 shadow-md">
         <div className="max-w-7xl mx-auto px-4">
 
@@ -144,7 +151,7 @@ const Navbar = () => {
             <div
               className="
                 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2
-                xl:flex xl:flex-nowrap xl:w-full xl:justify-between
+                xl:flex xl:flex-nowrap xl:w-full xl:justify-between xl:overflow-x-auto xl:pb-2 menu-scroll
               "
             >
               {navItems.map((item) =>
@@ -156,7 +163,7 @@ const Navbar = () => {
                     className={`
                       text-white text-center font-medium rounded-md
                       px-3 py-2 text-sm
-                      xl:px-1 xl:py-1 xl:text-[11px]
+                      xl:px-1 xl:py-1 xl:text-[11px] xl:whitespace-nowrap
                       hover:bg-teal-600
                       ${
                         isActive(item.href)
@@ -174,7 +181,7 @@ const Navbar = () => {
                     className={`
                       text-white text-center font-medium rounded-md
                       px-3 py-2 text-sm
-                      xl:px-1 xl:py-1 xl:text-[11px]
+                      xl:px-1 xl:py-1 xl:text-[11px] xl:whitespace-nowrap
                       hover:bg-teal-600
                       ${
                         activeSection === item.id

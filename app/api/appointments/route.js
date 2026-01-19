@@ -26,6 +26,8 @@ export async function GET(req) {
         status,
         appointmentDate,
         appointmentTime,
+        paymentScreenshot,
+        transactionId,
         _createdAt
       }`;
     } else {
@@ -38,6 +40,8 @@ export async function GET(req) {
         status,
         appointmentDate,
         appointmentTime,
+        paymentScreenshot,
+        transactionId,
         _createdAt
       }`;
     }
@@ -64,15 +68,10 @@ export async function POST(req) {
     }
 
     const body = await req.json();
-    console.log('📥 मिला डेटा:', body);
     
-    const { patientName, patientPhone, notes, issueDescription } = body;
-    const finalDescription = issueDescription || notes;
-    
-    console.log('✅ Fields:', { patientName, patientPhone, finalDescription });
+    const { patientName, patientEmail, patientPhone, issueDescription, transactionId } = body;
 
-    if (!patientName || !patientEmail || !patientPhone || !finalDescription) {
-      console.log('❌ Validation failed');
+    if (!patientName || !patientEmail || !patientPhone || !issueDescription) {
       return NextResponse.json(
         { error: 'All fields are required' },
         { status: 400 }
@@ -85,18 +84,17 @@ export async function POST(req) {
       patientName,
       patientEmail,
       patientPhone,
-      issueDescription: finalDescription,
+      issueDescription,
+      transactionId: transactionId || '',
       status: 'pending',
       _createdAt: new Date().toISOString(),
     };
 
-    console.log('💾 Saving to Sanity:', newAppointment);
     const result = await client.create(newAppointment);
-    console.log('✅ Saved successfully:', result._id);
     
     return NextResponse.json(result, { status: 201 });
   } catch (error) {
-    console.error('❌ Error creating appointment:', error);
+    console.error('Error creating appointment:', error);
     return NextResponse.json(
       { error: 'Failed to create appointment' },
       { status: 500 }

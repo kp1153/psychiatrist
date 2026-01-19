@@ -24,3 +24,21 @@
     --radius: 0.5rem;
   }
 }
+
+.menu-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.menu-scroll::-webkit-scrollbar-track {
+  background: #0f766e;
+  border-radius: 10px;
+}
+
+.menu-scroll::-webkit-scrollbar-thumb {
+  background: #14b8a6;
+  border-radius: 10px;
+}
+
+.menu-scroll::-webkit-scrollbar-thumb:hover {
+  background: #5eead4;
+}
