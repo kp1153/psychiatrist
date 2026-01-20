@@ -1,69 +1,43 @@
-export default {
+import {defineField, defineType} from 'sanity'
+
+export default defineType({
   name: 'appointment',
-  title: 'Appointments',
+  title: 'Appointment',
   type: 'document',
   fields: [
-    {
-      name: 'userId',
-      title: 'User ID',
-      type: 'string',
-    },
-    {
-      name: 'patientName',
-      title: 'Patient Name',
-      type: 'string',
-      validation: Rule => Rule.required()
-    },
-    {
-      name: 'patientEmail',
-      title: 'Patient Email',
-      type: 'string',
-    },
-    {
-      name: 'patientPhone',
-      title: 'Patient Phone',
-      type: 'string',
-      validation: Rule => Rule.required()
-    },
-    {
-      name: 'issueDescription',
-      title: 'Issue Description',
-      type: 'text',
-    },
-    {
-      name: 'preferredDate',
-      title: 'Preferred Date',
-      type: 'date',
-    },
-    {
-      name: 'confirmedDateTime',
-      title: 'Confirmed Date & Time',
+    defineField({
+      name: 'patient',
+      title: 'Patient',
+      type: 'reference',
+      to: [{type: 'patient'}],
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'appointmentDate',
+      title: 'Appointment Date',
       type: 'datetime',
-    },
-    {
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'prescription',
+      title: 'Related Prescription',
+      type: 'reference',
+      to: [{type: 'prescription'}],
+    }),
+    defineField({
       name: 'status',
       title: 'Status',
       type: 'string',
       options: {
-        list: [
-          {title: 'Requested', value: 'requested'},
-          {title: 'Time Slot Given', value: 'slot_given'},
-          {title: 'Confirmed', value: 'confirmed'},
-          {title: 'Completed', value: 'completed'},
-          {title: 'Cancelled', value: 'cancelled'},
-        ],
+        list: ['Scheduled', 'Completed', 'Cancelled'],
       },
-      initialValue: 'requested',
-    },
-    {
-      name: 'notes',
-      title: 'Patient Notes',
-      type: 'text',
-    },
-    {
-      name: 'doctorNotes',
-      title: 'Doctor Notes',
-      type: 'text',
-    },
+      initialValue: 'Scheduled',
+    }),
+    defineField({
+      name: 'reminderSent',
+      title: 'Reminder Sent',
+      type: 'boolean',
+      initialValue: false,
+    }),
   ],
-}
+})
