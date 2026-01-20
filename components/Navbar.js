@@ -1,4 +1,4 @@
- "use client";
+"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -13,23 +13,25 @@ const Navbar = () => {
   const pathname = usePathname();
 
   const navItems = [
-    { name: "होम", id: "hero" },
-    { name: "अनिद्रा", id: "insomnia" },
-    { name: "माइग्रेन", id: "migraine" },
-    { name: "मिर्गी", id: "epilepsy" },
-    { name: "अवसाद", id: "depression" },
-    { name: "चिंता", id: "anxiety" },
-    { name: "बाइपोलर", id: "bipolar" },
-    { name: "स्किज़ोफ्रेनिया", id: "schizophrenia" },
-    { name: "OCD", id: "ocd" },
-    { name: "ADHD", id: "adhd" },
-    { name: "PTSD", id: "ptsd" },
-    { name: "नशामुक्ति", id: "addiction" },
-    { name: "यौन स्वास्थ्य", id: "sexual-dysfunction" },
-    { name: "संपर्क करें", href: "/contact" },
-    { name: "ब्लॉग", href: "/blog" },
-    { name: "डैशबोर्ड", href: "/dashboard" },
-  ];
+  { name: "होम", id: "hero" },
+  { name: "अनिद्रा", id: "insomnia" },
+  { name: "माइग्रेन", id: "migraine" },
+  { name: "मिर्गी", id: "epilepsy" },
+  { name: "अवसाद", id: "depression" },
+  { name: "चिंता", id: "anxiety" },
+  { name: "बाइपोलर", id: "bipolar" },
+  { name: "स्किज़ोफ्रेनिया", id: "schizophrenia" },
+  { name: "OCD", id: "ocd" },
+  { name: "ADHD", id: "adhd" },
+  { name: "PTSD", id: "ptsd" },
+  { name: "नशामुक्ति", id: "addiction" },
+  { name: "यौन स्वास्थ्य", id: "sexual-dysfunction" },
+  { name: "पर्चा बनाएं", href: "/prescription" },
+  { name: "अपॉइंटमेंट", href: "/appointments" },
+  { name: "संपर्क करें", href: "/contact" },
+  { name: "ब्लॉग", href: "/blog" },
+  { name: "डैशबोर्ड", href: "/dashboard" },
+];
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -80,14 +82,14 @@ const Navbar = () => {
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{__html: `
-        .menu-scroll::-webkit-scrollbar { height: 8px; }
-        .menu-scroll::-webkit-scrollbar-track { background: #0f766e; }
-        .menu-scroll::-webkit-scrollbar-thumb { background: #14b8a6; border-radius: 6px; }
-        .menu-scroll::-webkit-scrollbar-thumb:hover { background: #5eead4; }
-      `}} />
-
-      <nav className="bg-teal-700 shadow-md">
+    <nav className="bg-teal-700 shadow-md">
+        <style dangerouslySetInnerHTML={{__html: `
+          .menu-scroll::-webkit-scrollbar { height: 8px; }
+          .menu-scroll::-webkit-scrollbar-track { background: #0f766e; }
+          .menu-scroll::-webkit-scrollbar-thumb { background: #14b8a6; border-radius: 6px; }
+          .menu-scroll::-webkit-scrollbar-thumb:hover { background: #5eead4; }
+        `}} />
+        
         <div className="max-w-7xl mx-auto px-4">
 
           {/* Header – gap increased between name & designation */}
@@ -117,7 +119,7 @@ const Navbar = () => {
 
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-md text-white hover:bg-teal-600 xl:hidden"
+                className="p-2 rounded-md text-white hover:bg-teal-600 md:hidden"
               >
                 <svg
                   className="h-6 w-6"
@@ -145,15 +147,15 @@ const Navbar = () => {
             className={`
               pt-1 pb-2
               ${isMenuOpen ? "block" : "hidden"}
-              xl:block
+              md:block
             `}
           >
-            <div
-              className="
-                grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2
-                xl:flex xl:flex-nowrap xl:w-full xl:justify-between xl:overflow-x-auto xl:pb-2 menu-scroll
-              "
-            >
+       <div
+  className="
+    grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2
+    lg:flex lg:flex-nowrap lg:w-full lg:justify-between lg:overflow-x-auto lg:pb-2 menu-scroll
+  "
+>
               {navItems.map((item) =>
                 item.href ? (
                   <Link
@@ -161,9 +163,9 @@ const Navbar = () => {
                     href={item.href}
                     onClick={() => setIsMenuOpen(false)}
                     className={`
-                      text-white text-center font-medium rounded-md
+                      text-white text-center font-medium rounded-md whitespace-nowrap
                       px-3 py-2 text-sm
-                      xl:px-1 xl:py-1 xl:text-[11px] xl:whitespace-nowrap
+                      xl:px-1 xl:py-1 xl:text-[11px]
                       hover:bg-teal-600
                       ${
                         isActive(item.href)
@@ -179,9 +181,9 @@ const Navbar = () => {
                     key={item.name}
                     onClick={() => scrollToSection(item.id)}
                     className={`
-                      text-white text-center font-medium rounded-md
+                      text-white text-center font-medium rounded-md whitespace-nowrap
                       px-3 py-2 text-sm
-                      xl:px-1 xl:py-1 xl:text-[11px] xl:whitespace-nowrap
+                      xl:px-1 xl:py-1 xl:text-[11px]
                       hover:bg-teal-600
                       ${
                         activeSection === item.id
