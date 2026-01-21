@@ -151,11 +151,7 @@ const Navbar = () => {
             `}
           >
        <div
-  className="
-    grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2
-    lg:flex lg:flex-nowrap lg:w-full lg:justify-between lg:overflow-x-auto lg:pb-2 menu-scroll
-  "
->
+<div className="flex flex-nowrap w-full justify-between overflow-x-auto pb-2 menu-scroll gap-2">
               {navItems.map((item) =>
                 item.href ? (
                   <Link
