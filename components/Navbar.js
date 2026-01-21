@@ -150,7 +150,7 @@ const Navbar = () => {
               md:block
             `}
           >
-       <div
+      
 <div className="flex flex-nowrap w-full justify-between overflow-x-auto pb-2 menu-scroll gap-2">
               {navItems.map((item) =>
                 item.href ? (
